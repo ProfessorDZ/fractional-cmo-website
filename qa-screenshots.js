@@ -27,13 +27,13 @@ async function setLang(page, lang) {
   await page.waitForTimeout(300);
 }
 
-async function captureVariant(browser, variantName, contextOptions) {
+async function captureVariant(browser, variantName, lang, contextOptions) {
   const context = await browser.newContext(contextOptions);
   const page = await context.newPage();
   await page.goto(target, { waitUntil: 'networkidle' });
-  await setLang(page, 'ua');
+  await setLang(page, lang);
 
-  await page.screenshot({ path: path.join(outDir, `${variantName}-full.png`), fullPage: true });
+  await page.screenshot({ path: path.join(outDir, `${lang}-${variantName}-full.png`), fullPage: true });
 
   for (const section of sections) {
     const locator = page.locator(section.selector).first();
@@ -41,7 +41,7 @@ async function captureVariant(browser, variantName, contextOptions) {
       el.scrollIntoView({ behavior: 'instant', block: 'center' });
     });
     await page.waitForTimeout(300);
-    await locator.screenshot({ path: path.join(outDir, `${variantName}-${section.name}.png`) });
+    await locator.screenshot({ path: path.join(outDir, `${lang}-${variantName}-${section.name}.png`) });
   }
 
   await context.close();
@@ -50,14 +50,16 @@ async function captureVariant(browser, variantName, contextOptions) {
 (async () => {
   const browser = await chromium.launch({ headless: true });
   try {
-    await captureVariant(browser, 'desktop', {
-      viewport: { width: 1440, height: 2200 },
-      deviceScaleFactor: 1,
-    });
+    for (const lang of ['en', 'ua']) {
+      await captureVariant(browser, 'desktop', lang, {
+        viewport: { width: 1440, height: 2200 },
+        deviceScaleFactor: 1,
+      });
 
-    await captureVariant(browser, 'mobile', {
-      ...devices['iPhone 13'],
-    });
+      await captureVariant(browser, 'mobile', lang, {
+        ...devices['iPhone 13'],
+      });
+    }
   } finally {
     await browser.close();
   }
