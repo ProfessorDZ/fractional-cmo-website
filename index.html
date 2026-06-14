@@ -157,9 +157,18 @@
       font-size: 14px;
     }
 
+    .nav-links a.cta {
+      color: #fff;
+      padding: 14px 20px;
+    }
+
     .nav-links a:hover,
     .ghost-link:hover {
       background: rgba(23,23,23,0.05);
+    }
+
+    .nav-links a.cta:hover {
+      background: linear-gradient(135deg, var(--ink), var(--blue));
     }
 
     .cta,
@@ -638,6 +647,8 @@
     @media (max-width: 720px) {
       .wrap { width: min(calc(100vw - 24px), var(--max)); }
       .nav-inner { align-items: flex-start; flex-direction: column; }
+      .nav-links { width: 100%; gap: 12px; }
+      .nav-links a.cta { justify-content: center; }
       .hero { padding-top: 34px; }
       .hero-copy, .system-map, .offer-panel, .service-card, .proof-card, .process-step, .cta-panel { padding: 20px; }
       .cta-panel { border-radius: 28px; }
