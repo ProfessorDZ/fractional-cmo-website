@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professor — Fractional CMO + AI Marketing Systems</title>
+  <meta name="description" content="First-pass homepage concept for a fractional CMO and AI implementation partner for B2B SaaS and service companies." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4efe9;
+      --bg-2: #efe7de;
+      --surface: rgba(255,255,255,0.48);
+      --surface-strong: rgba(255,255,255,0.76);
+      --ink: #171717;
+      --muted: #5e5a55;
+      --border: rgba(23,23,23,0.1);
+      --orange: #fc5100;
+      --blue: #0501de;
+      --lime: #bee000;
+      --shadow: 0 24px 80px rgba(23, 23, 23, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(252,81,0,0.10), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(5,1,222,0.08), transparent 24%),
+        linear-gradient(180deg, var(--bg) 0%, #f8f4ef 35%, #f2ebe2 100%);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    .page-orb {
+      position: fixed;
+      inset: auto;
+      width: 42vw;
+      height: 42vw;
+      max-width: 540px;
+      max-height: 540px;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0.28;
+      pointer-events: none;
+      z-index: 0;
+      animation: float 12s ease-in-out infinite;
+    }
+
+    .orb-a { top: -12vw; left: -10vw; background: rgba(252,81,0,0.25); }
+    .orb-b { right: -12vw; top: 30vh; background: rgba(5,1,222,0.18); animation-delay: -4s; }
+    .orb-c { bottom: -16vw; left: 25vw; background: rgba(190,224,0,0.14); animation-delay: -8s; }
+
+    @keyframes float {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(0, 24px, 0) scale(1.04); }
+    }
+
+    .site {
+      position: relative;
+      z-index: 1;
+    }
+
+    .wrap {
+      width: min(calc(100vw - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(244, 239, 233, 0.72);
+      border-bottom: 1px solid rgba(23,23,23,0.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+
+    .brand,
+    .eyebrow,
+    .pill,
+    .stat-label,
+    .mini-label,
+    .service-tag,
+    .process-step span {
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--orange), var(--blue));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a,
+    .ghost-link {
+      color: var(--ink);
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: 180ms ease;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover,
+    .ghost-link:hover {
+      background: rgba(23,23,23,0.05);
+    }
+
+    .cta,
+    .cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 20px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .cta {
+      color: #fff;
+      background: linear-gradient(135deg, var(--ink), var(--blue));
+      box-shadow: 0 16px 42px rgba(5,1,222,0.22);
+    }
+
+    .cta-secondary {
+      color: var(--ink);
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(23,23,23,0.08);
+    }
+
+    .cta:hover,
+    .cta-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 64px 0 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.58), rgba(255,255,255,0.34));
+      border: 1px solid rgba(255,255,255,0.62);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy {
+      padding: 34px;
+      min-height: 560px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), var(--lime));
+      box-shadow: 0 0 0 6px rgba(252,81,0,0.08);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 0.92;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4.4rem, 11vw, 8.4rem);
+      letter-spacing: 0.02em;
+      max-width: 8.5ch;
+    }
+
+    .hero-sub {
+      margin-top: 20px;
+      max-width: 58ch;
+      font-size: 19px;
+      line-height: 1.55;
+      color: #282522;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .hero-strip {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .mini-metric {
+      padding: 16px 16px 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.46);
+      border: 1px solid rgba(23,23,23,0.06);
+    }
+
+    .mini-label {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .mini-value {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .hero-side {
+      display: grid;
+      grid-template-rows: 1.05fr 0.95fr;
+      gap: 18px;
+    }
+
+    .system-map {
+      padding: 26px;
+      min-height: 300px;
+      background:
+        linear-gradient(160deg, rgba(5,1,222,0.94), rgba(5,1,222,0.75)),
+        linear-gradient(180deg, #0501de, #18135f);
+      color: white;
+    }
+
+    .system-map::after {
+      content: '';
+      position: absolute;
+      inset: auto -12% -22% auto;
+      width: 240px;
+      height: 240px;
+      border-radius: 48px;
+      transform: rotate(18deg);
+      background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .system-map h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      margin-bottom: 10px;
+    }
+
+    .map-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .map-node {
+      border-radius: 22px;
+      background: rgba(255,255,255,0.12);
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,0.14);
+      min-height: 112px;
+    }
+
+    .map-node strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .map-node p {
+      margin: 0;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.45;
+      font-size: 14px;
+    }
+
+    .offer-panel {
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .offer-lead {
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(23,23,23,0.94);
+      color: #fff;
+      min-height: 100%;
+    }
+
+    .offer-lead h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .offer-lead p,
+    .offer-points li,
+    .text,
+    .service-card p,
+    .process-step p,
+    .proof-card p,
+    .footer-note,
+    .cta-panel p {
+      line-height: 1.55;
+      color: inherit;
+    }
+
+    .offer-points {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .offer-points li {
+      padding: 16px 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(23,23,23,0.08);
+      font-size: 15px;
+    }
+
+    section {
+      padding: 26px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.78fr 1fr;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 4.6rem);
+      letter-spacing: 0.02em;
+    }
+
+    .section-head .text {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 56ch;
+    }
+
+    .service-grid,
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card,
+    .proof-card,
+    .process-step {
+      padding: 24px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.58);
+      border: 1px solid rgba(23,23,23,0.07);
+      box-shadow: 0 18px 50px rgba(23,23,23,0.06);
+    }
+
+    .service-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .service-tag::before {
+      content: '';
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--orange), var(--blue));
+    }
+
+    .service-card h3,
+    .proof-card h3,
+    .process-step h3,
+    .cta-panel h2 {
+      font-size: 24px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .service-card ul {
+      margin: 18px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .proof-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 240px;
+    }
+
+    .proof-card.accent-orange {
+      background: linear-gradient(160deg, rgba(252,81,0,0.95), rgba(221,72,0,0.88));
+      color: white;
+    }
+
+    .proof-card.accent-dark {
+      background: linear-gradient(180deg, #0c0d05, #222616);
+      color: white;
+    }
+
+    .proof-card.accent-light {
+      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.54));
+    }
+
+    .stat-value {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 7vw, 5rem);
+      margin-bottom: 10px;
+      line-height: 0.9;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-bottom: 10px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .process-step span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .cta-block {
+      padding: 28px 0 76px;
+    }
+
+    .cta-panel {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 18px;
+      align-items: stretch;
+      padding: 24px;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(252,81,0,0.14), transparent 28%),
+        radial-gradient(circle at 84% 20%, rgba(5,1,222,0.16), transparent 30%),
+        rgba(255,255,255,0.56);
+      border: 1px solid rgba(23,23,23,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-copy {
+      padding: 14px 10px 14px 8px;
+    }
+
+    .cta-copy h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 7vw, 5rem);
+      margin-bottom: 10px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .cta-notes {
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(23,23,23,0.94);
+      color: white;
+      display: grid;
+      gap: 14px;
+      align-content: center;
+    }
+
+    .note {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    footer {
+      padding: 0 0 36px;
+    }
+
+    .footer-note {
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .section-head,
+      .cta-panel,
+      .service-grid,
+      .proof-grid,
+      .process,
+      .hero-side,
+      .offer-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy { min-height: unset; }
+      .hero-strip,
+      .map-grid { grid-template-columns: 1fr; }
+      .offer-panel { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(calc(100vw - 24px), var(--max)); }
+      .nav-inner { align-items: flex-start; flex-direction: column; }
+      .hero { padding-top: 34px; }
+      .hero-copy, .system-map, .offer-panel, .service-card, .proof-card, .process-step, .cta-panel { padding: 20px; }
+      .cta-panel { border-radius: 28px; }
+      .hero-sub { font-size: 17px; }
+      h1 { max-width: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .page-orb,
+      .reveal,
+      .reveal.in-view,
+      .cta,
+      .cta-secondary { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-orb orb-a"></div>
+  <div class="page-orb orb-b"></div>
+  <div class="page-orb orb-c"></div>
+
+  <div class="site">
+    <nav class="nav">
+      <div class="wrap nav-inner">
+        <div class="brand">
+          <div class="brand-mark"></div>
+          <div>
+            <div>Professor</div>
+            <div style="font-size:12px;color:var(--muted);font-weight:600;">Fractional CMO · AI Systems</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#why">Why me</a>
+          <a href="#process">Process</a>
+          <a class="cta" href="#contact">Book intro call</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap hero-grid">
+        <div class="card hero-copy reveal">
+          <div>
+            <div class="eyebrow">Fractional CMO for B2B SaaS and service companies</div>
+            <h1>Build a smarter marketing system</h1>
+            <p class="hero-sub">
+              I help B2B companies tighten positioning, improve execution, and implement practical AI across marketing and operations — so teams move faster, produce better work, and stop wasting money on chaos and fragmented hires.
+            </p>
+            <div class="hero-actions">
+              <a class="cta" href="#contact">Discuss your growth system</a>
+              <a class="cta-secondary" href="#services">See services</a>
+            </div>
+          </div>
+
+          <div class="hero-strip">
+            <div class="mini-metric">
+              <span class="mini-label">Positioning</span>
+              <div class="mini-value">Sharper messaging that actually matches buyer reality</div>
+            </div>
+            <div class="mini-metric">
+              <span class="mini-label">AI operations</span>
+              <div class="mini-value">Practical workflows that speed up output without lowering quality</div>
+            </div>
+            <div class="mini-metric">
+              <span class="mini-label">Web infrastructure</span>
+              <div class="mini-value">Move from limiting no-code setups to flexible AI-assisted custom sites</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="card system-map reveal">
+            <div class="eyebrow" style="color:rgba(255,255,255,0.72);">What I actually build</div>
+            <h2>Marketing AI brain</h2>
+            <p style="max-width:46ch;line-height:1.55;color:rgba(255,255,255,0.82);margin:0;">
+              Not AI for show. A company-level system for knowledge, speed, execution quality, and repeatable decisions.
+            </p>
+            <div class="map-grid">
+              <div class="map-node">
+                <strong>Knowledge layer</strong>
+                <p>Messaging, playbooks, best practices, source materials, and team context in one working memory.</p>
+              </div>
+              <div class="map-node">
+                <strong>Execution layer</strong>
+                <p>AI-assisted content, campaign prep, research, briefs, summaries, and internal ops support.</p>
+              </div>
+              <div class="map-node">
+                <strong>Decision layer</strong>
+                <p>Sharper prioritization, fewer blind spots, more consistent standards across work.</p>
+              </div>
+              <div class="map-node">
+                <strong>Speed layer</strong>
+                <p>Faster iterations, fewer specialist bottlenecks, less wasted team time.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card offer-panel reveal">
+            <div class="offer-lead">
+              <h3>Operator, not observer</h3>
+              <p>
+                I work at the level of strategy, systems, and implementation — not just slide decks and advice.
+              </p>
+            </div>
+            <ul class="offer-points">
+              <li>Fractional CMO leadership for growing B2B companies</li>
+              <li>AI implementation that improves real team throughput</li>
+              <li>No-code to flexible custom web migrations when the current stack becomes limiting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Services</h2>
+          <p class="text">
+            This is positioned as a high-value operating partner offer: strategy where needed, implementation where it matters, and systems that make the team stronger after the engagement.
+          </p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="service-tag">Fractional CMO</div>
+            <h3>Marketing leadership without a full-time CMO hire</h3>
+            <p class="text">For B2B SaaS and service companies that need senior-level thinking, direction, and prioritization.</p>
+            <ul>
+              <li>Positioning and messaging correction</li>
+              <li>Growth priorities and channel focus</li>
+              <li>Team orchestration and decision support</li>
+            </ul>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-tag">AI implementation</div>
+            <h3>Practical AI systems for marketing and operations</h3>
+            <p class="text">AI that makes the company faster and sharper, not just more excited about tools.</p>
+            <ul>
+              <li>Marketing AI brain architecture</li>
+              <li>Workflow automation and prompt systems</li>
+              <li>Research, briefs, content, and internal knowledge workflows</li>
+            </ul>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-tag">Web migration</div>
+            <h3>From no-code limits to flexible growth infrastructure</h3>
+            <p class="text">When platforms like Webflow become constraining, I help rethink the site as a more flexible, AI-assisted business asset.</p>
+            <ul>
+              <li>Website strategy and restructuring</li>
+              <li>Migration planning from no-code setups</li>
+              <li>Conversion-focused custom site direction</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Why this is different</h2>
+          <p class="text">
+            The site should make one thing obvious: this is not generic agency packaging. The value is in better decisions, stronger systems, and a more capable company.
+          </p>
+        </div>
+        <div class="proof-grid">
+          <article class="proof-card accent-orange reveal">
+            <div class="stat-label">Signal 01</div>
+            <div class="stat-value">CMO</div>
+            <h3>Strategic level thinking</h3>
+            <p>You get senior marketing judgment, not just output production.</p>
+          </article>
+          <article class="proof-card accent-light reveal">
+            <div class="stat-label">Signal 02</div>
+            <div class="stat-value" style="color:var(--blue);">AI</div>
+            <h3>Operational AI integration</h3>
+            <p>AI is treated as infrastructure for speed, consistency, and leverage.</p>
+          </article>
+          <article class="proof-card accent-dark reveal">
+            <div class="stat-label">Signal 03</div>
+            <div class="stat-value">Build</div>
+            <h3>System builder mindset</h3>
+            <p>Processes, websites, workflows, and knowledge systems are designed to keep compounding after launch.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>How I work</h2>
+          <p class="text">
+            The process is simple on purpose: diagnose what is actually broken, decide what matters most, then implement systems that improve output and reduce waste.
+          </p>
+        </div>
+        <div class="process">
+          <article class="process-step reveal">
+            <span>01 · Diagnose</span>
+            <h3>Find the real bottleneck</h3>
+            <p>Positioning confusion, execution drag, team inconsistency, weak web infrastructure, or a fake-AI problem where tools exist but business impact does not.</p>
+          </article>
+          <article class="process-step reveal">
+            <span>02 · Design</span>
+            <h3>Shape the operating system</h3>
+            <p>Define what the team needs: messaging system, workflow stack, knowledge layer, AI-enabled process, or a better website architecture.</p>
+          </article>
+          <article class="process-step reveal">
+            <span>03 · Implement</span>
+            <h3>Make it usable in the real business</h3>
+            <p>Ship a system people can actually work with — faster, clearer, and less dependent on expensive patchwork hiring.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-block" id="contact">
+      <div class="wrap">
+        <div class="cta-panel reveal">
+          <div class="cta-copy">
+            <div class="eyebrow">First-pass CTA</div>
+            <h2>Let’s make your marketing system more capable</h2>
+            <p class="text" style="font-size:18px;color:#2a2723;max-width:58ch;">
+              If your team needs sharper positioning, practical AI implementation, or a move away from limiting no-code infrastructure, this is where the conversation starts.
+            </p>
+            <div class="cta-actions">
+              <a class="cta" href="mailto:marketinggrizly@gmail.com">Book an intro</a>
+              <a class="cta-secondary" href="#services">Review services</a>
+            </div>
+          </div>
+          <div class="cta-notes">
+            <div class="note">Best fit: B2B SaaS and service companies that need senior marketing direction plus real implementation leverage.</div>
+            <div class="note">Typical outcomes: clearer priorities, stronger marketing systems, faster team throughput, less wasted spend on fragmented execution.</div>
+            <div class="note">This visual direction blends Copula’s energy, NVRMND’s restraint, and Noxediem’s conceptual polish — without turning you into a design studio.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap footer-note">
+        First concept homepage · built as an original reference-led direction, not a direct clone of any source site.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
