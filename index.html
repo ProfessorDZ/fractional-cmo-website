@@ -20,8 +20,16 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'Bebas Neue Cyrillic';
+      src: url('./assets/fonts/Bebas_Neue_Cyrillic.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       --bg: #f4efe9;
       --bg-2: #efe7de;
@@ -253,10 +261,11 @@
     }
 
     h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(4.4rem, 11vw, 8.4rem);
-      letter-spacing: 0.02em;
-      max-width: 8.5ch;
+      font-family: 'Bebas Neue Cyrillic', 'Oswald', sans-serif;
+      font-size: clamp(4rem, 10vw, 7.6rem);
+      letter-spacing: 0.01em;
+      line-height: 0.98;
+      max-width: 9.5ch;
     }
 
     .hero-sub {
@@ -379,9 +388,11 @@
     }
 
     .system-map h2 {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Bebas Neue Cyrillic', 'Oswald', sans-serif;
       font-size: clamp(2.2rem, 5vw, 3.4rem);
       margin-bottom: 10px;
+      letter-spacing: 0.01em;
+      line-height: 1;
     }
 
     .map-grid {
@@ -431,9 +442,11 @@
     }
 
     .offer-lead h3 {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Bebas Neue Cyrillic', 'Oswald', sans-serif;
       font-size: 2.2rem;
       margin-bottom: 12px;
+      letter-spacing: 0.01em;
+      line-height: 1.05;
     }
 
     .offer-lead p,
@@ -466,6 +479,7 @@
 
     section {
       padding: 26px 0;
+      scroll-margin-top: 120px;
     }
 
     .section-head {
@@ -477,9 +491,10 @@
     }
 
     .section-head h2 {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Bebas Neue Cyrillic', 'Oswald', sans-serif;
       font-size: clamp(2.8rem, 6vw, 4.6rem);
-      letter-spacing: 0.02em;
+      letter-spacing: 0.01em;
+      line-height: 1.02;
     }
 
     .section-head .text {
@@ -559,10 +574,11 @@
     }
 
     .stat-value {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Bebas Neue Cyrillic', 'Oswald', sans-serif;
       font-size: clamp(3rem, 7vw, 5rem);
       margin-bottom: 10px;
-      line-height: 0.9;
+      line-height: 0.94;
+      letter-spacing: 0.01em;
     }
 
     .stat-label {
@@ -608,9 +624,11 @@
     }
 
     .cta-copy h2 {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Bebas Neue Cyrillic', 'Oswald', sans-serif;
       font-size: clamp(3rem, 7vw, 5rem);
       margin-bottom: 10px;
+      line-height: 1.02;
+      letter-spacing: 0.01em;
     }
 
     .cta-actions {
@@ -688,7 +706,11 @@
       .hero-copy, .system-map, .offer-panel, .service-card, .proof-card, .process-step, .cta-panel { padding: 20px; }
       .cta-panel { border-radius: 28px; }
       .hero-sub { font-size: 17px; }
-      h1 { max-width: none; }
+      h1 {
+        max-width: none;
+        font-size: clamp(3.3rem, 13vw, 5.6rem);
+        line-height: 0.95;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -713,7 +735,7 @@
           <div class="brand-mark"></div>
           <div>
             <div>Professor</div>
-            <div style="font-size:12px;color:var(--muted);font-weight:600;">Fractional CMO · Marketing AI Systems</div>
+            <div data-brand-subline style="font-size:12px;color:var(--muted);font-weight:600;">Fractional CMO · Marketing AI Systems</div>
           </div>
         </div>
         <div class="nav-links">
@@ -733,13 +755,10 @@
       <div class="wrap hero-grid">
         <div class="card hero-copy reveal">
           <div>
-            <div class="eyebrow">Fractional CMO for B2B SaaS and service companies</div>
-            <h1>Build a stronger marketing operating system</h1>
-            <p class="hero-sub">
-              I help B2B companies sharpen positioning, improve execution, and implement practical AI across marketing and operations — including company-level marketing AI brains that increase speed, improve quality, and save thousands of dollars in avoidable hiring overhead.
-              <span class="ua-inline">Допомагаю B2B-компаніям уточнити позиціонування, посилити виконання й впровадити практичний AI у маркетинг та операційку — включно з маркетинговими AI-brain системами, які підвищують швидкість, покращують якість і економлять тисячі доларів на зайвому наймі.</span>
-            </p>
-            <div class="lang-note" data-i18n="lang-note">English is primary. Ukrainian is included below the key sections.</div>
+            <div class="eyebrow" data-i18n="hero-eyebrow">Fractional CMO for B2B SaaS and service companies</div>
+            <h1 data-i18n="hero-title">Build a stronger marketing operating system</h1>
+            <p class="hero-sub" data-i18n="hero-sub">I help B2B companies sharpen positioning, improve execution, and implement practical AI across marketing and operations — including company-level marketing AI brains that increase speed, improve quality, and save thousands of dollars in avoidable hiring overhead.</p>
+            <div class="lang-note" data-i18n="lang-note">English is primary. Switch to Ukrainian for a fully localized version.</div>
             <div class="hero-actions">
               <a class="cta" href="#contact" data-i18n="hero-cta-primary">Discuss your growth system</a>
               <a class="cta-secondary" href="#services" data-i18n="hero-cta-secondary">See services</a>
@@ -748,60 +767,54 @@
 
           <div class="hero-strip">
             <div class="mini-metric">
-              <span class="mini-label">Positioning</span>
-              <div class="mini-value">Sharper messaging that actually matches buyer reality</div>
+              <span class="mini-label" data-i18n="metric-1-label">Positioning</span>
+              <div class="mini-value" data-i18n="metric-1-value">Sharpen your message so buyers understand why you are the right choice.</div>
             </div>
             <div class="mini-metric">
-              <span class="mini-label">AI operations</span>
-              <div class="mini-value">Practical workflows and AI brains that increase speed without lowering quality</div>
+              <span class="mini-label" data-i18n="metric-2-label">AI operations</span>
+              <div class="mini-value" data-i18n="metric-2-value">Implement AI workflows that increase speed without lowering quality.</div>
             </div>
             <div class="mini-metric">
-              <span class="mini-label">Web infrastructure</span>
-              <div class="mini-value">Move from limiting no-code setups to flexible custom sites built for growth</div>
+              <span class="mini-label" data-i18n="metric-3-label">Web infrastructure</span>
+              <div class="mini-value" data-i18n="metric-3-value">Move beyond no-code limitations into a flexible site built for growth.</div>
             </div>
           </div>
         </div>
 
         <div class="hero-side">
           <div class="card system-map reveal">
-            <div class="eyebrow" style="color:rgba(255,255,255,0.72);">What I actually build</div>
-            <h2>Marketing AI brain</h2>
-            <p style="max-width:46ch;line-height:1.55;color:rgba(255,255,255,0.82);margin:0;">
-              Not AI for show. A company-level system for knowledge, speed, execution quality, and repeatable decisions.
-              <span class="ua-inline" style="color:rgba(255,255,255,0.72);">Не AI для галочки, а рівень системи компанії: знання, швидкість, якість виконання й повторювані кращі рішення.</span>
-            </p>
+            <div class="eyebrow" style="color:rgba(255,255,255,0.72);" data-i18n="brain-eyebrow">What I actually build</div>
+            <h2 data-i18n="brain-title">Marketing AI brain</h2>
+            <p style="max-width:46ch;line-height:1.55;color:rgba(255,255,255,0.82);margin:0;" data-i18n="brain-sub">Not AI for show. A company-level system for knowledge, speed, execution quality, and repeatable decisions.</p>
             <div class="map-grid">
               <div class="map-node">
-                <strong>Knowledge layer</strong>
-                <p>Messaging, playbooks, best practices, source materials, and team context in one working memory.<span class="ua-inline" style="color:rgba(255,255,255,0.72);">Повідомлення, playbooks, best practices, вихідні матеріали й контекст команди в одній робочій пам’яті.</span></p>
+                <strong data-i18n="brain-node-1-title">Knowledge layer</strong>
+                <p data-i18n="brain-node-1-text">Messaging, playbooks, best practices, source materials, and team context in one working memory.</p>
               </div>
               <div class="map-node">
-                <strong>Execution layer</strong>
-                <p>AI-assisted content, campaign prep, research, briefs, summaries, and internal ops support.<span class="ua-inline" style="color:rgba(255,255,255,0.72);">AI-підсилений контент, підготовка кампаній, дослідження, брифи, самарі та внутрішня операційна підтримка.</span></p>
+                <strong data-i18n="brain-node-2-title">Execution layer</strong>
+                <p data-i18n="brain-node-2-text">AI-assisted research, briefs, content prep, summaries, and internal operating support.</p>
               </div>
               <div class="map-node">
-                <strong>Decision layer</strong>
-                <p>Sharper prioritization, fewer blind spots, more consistent standards across work.<span class="ua-inline" style="color:rgba(255,255,255,0.72);">Чіткіша пріоритизація, менше сліпих зон і стабільніший стандарт якості в роботі.</span></p>
+                <strong data-i18n="brain-node-3-title">Decision layer</strong>
+                <p data-i18n="brain-node-3-text">Sharper prioritization, fewer blind spots, and more consistent standards across the team.</p>
               </div>
               <div class="map-node">
-                <strong>Speed layer</strong>
-                <p>Faster iterations, fewer specialist bottlenecks, less wasted team time.<span class="ua-inline" style="color:rgba(255,255,255,0.72);">Швидші ітерації, менше вузьких місць через окремих спеціалістів і менше втрати часу команди.</span></p>
+                <strong data-i18n="brain-node-4-title">Speed layer</strong>
+                <p data-i18n="brain-node-4-text">Faster iterations, fewer specialist bottlenecks, and less wasted time.</p>
               </div>
             </div>
           </div>
 
           <div class="card offer-panel reveal">
             <div class="offer-lead">
-              <h3>Operator, not observer</h3>
-              <p>
-                I work at the level of strategy, systems, and implementation — not just slide decks and advice.
-                <span class="ua-inline">Працюю на рівні стратегії, систем і впровадження — не лише порадами чи презентаціями.</span>
-              </p>
+              <h3 data-i18n="offer-title">Operator, not observer</h3>
+              <p data-i18n="offer-text">I work at the level of strategy, systems, and implementation — not just advice decks and surface-level recommendations.</p>
             </div>
             <ul class="offer-points">
-              <li>Fractional CMO leadership for growing B2B companies</li>
-              <li>AI implementation and marketing AI brains that improve real team throughput</li>
-              <li>No-code to flexible custom web migrations when the current stack becomes limiting</li>
+              <li data-i18n="offer-point-1">Fractional CMO leadership for B2B companies that need senior direction without a full-time CMO hire.</li>
+              <li data-i18n="offer-point-2">AI implementation and marketing AI brain systems that improve real team throughput and decision quality.</li>
+              <li data-i18n="offer-point-3">Migration from limiting no-code setups to flexible custom websites built for growth.</li>
             </ul>
           </div>
         </div>
@@ -811,41 +824,38 @@
     <section id="services">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2>Services</h2>
-          <p class="text">
-            This is positioned as a high-value operating partner offer: strategy where needed, implementation where it matters, and systems that make the team stronger after the engagement.
-            <span class="ua-inline">Це пропозиція рівня операційного партнера: стратегія там, де вона потрібна, впровадження там, де воно дає результат, і системи, що посилюють команду після завершення роботи.</span>
-          </p>
+          <h2 data-i18n="services-title">Services</h2>
+          <p class="text" data-i18n="services-sub">This is a senior operating partner offer: strategy where it matters, implementation where it moves results, and systems that keep making the team stronger after the engagement.</p>
         </div>
         <div class="service-grid">
           <article class="service-card reveal">
-            <div class="service-tag">Fractional CMO</div>
-            <h3>Marketing leadership without a full-time CMO hire</h3>
-            <p class="text">For B2B SaaS and service companies that need senior-level thinking, direction, and prioritization.<span class="ua-inline">Для B2B SaaS і сервісних компаній, яким потрібні senior-рівень мислення, напрям і пріоритети без повноцінного найму CMO.</span></p>
+            <div class="service-tag" data-i18n="service-1-tag">Fractional CMO</div>
+            <h3 data-i18n="service-1-title">Senior marketing leadership without a full-time CMO hire</h3>
+            <p class="text" data-i18n="service-1-text">For B2B SaaS and service companies that need clarity, prioritization, and strong executive-level marketing judgment.</p>
             <ul>
-              <li>Positioning and messaging correction</li>
-              <li>Growth priorities and channel focus</li>
-              <li>Team orchestration and decision support</li>
+              <li data-i18n="service-1-bullet-1">Positioning and messaging correction</li>
+              <li data-i18n="service-1-bullet-2">Growth priorities and channel focus</li>
+              <li data-i18n="service-1-bullet-3">Team orchestration and decision support</li>
             </ul>
           </article>
           <article class="service-card reveal">
-            <div class="service-tag">AI implementation</div>
-            <h3>Practical AI systems for marketing and operations</h3>
-            <p class="text">AI that makes the company faster and sharper, not just more excited about tools.<span class="ua-inline">AI, який реально пришвидшує компанію і підвищує якість роботи, а не просто додає нові інструменти.</span></p>
+            <div class="service-tag" data-i18n="service-2-tag">AI implementation</div>
+            <h3 data-i18n="service-2-title">Practical AI systems for marketing and operations</h3>
+            <p class="text" data-i18n="service-2-text">AI that helps the company move faster, raise quality, and reduce dependence on fragmented specialist hiring.</p>
             <ul>
-              <li>Marketing AI brain architecture</li>
-              <li>Workflow automation and prompt systems</li>
-              <li>Research, briefs, content, and internal knowledge workflows</li>
+              <li data-i18n="service-2-bullet-1">Marketing AI brain architecture</li>
+              <li data-i18n="service-2-bullet-2">Workflow automation and prompt systems</li>
+              <li data-i18n="service-2-bullet-3">Research, briefs, content, and internal knowledge workflows</li>
             </ul>
           </article>
           <article class="service-card reveal">
-            <div class="service-tag">Web migration</div>
-            <h3>From no-code limits to flexible growth infrastructure</h3>
-            <p class="text">When platforms like Webflow become constraining, I help rethink the site as a more flexible, AI-assisted business asset.<span class="ua-inline">Коли платформи на кшталт Webflow починають обмежувати ріст, я допомагаю переосмислити сайт як гнучкий бізнес-актив.</span></p>
+            <div class="service-tag" data-i18n="service-3-tag">Web migration</div>
+            <h3 data-i18n="service-3-title">From no-code limits to flexible growth infrastructure</h3>
+            <p class="text" data-i18n="service-3-text">When tools like Webflow become constraining, I help rethink the site as a flexible business asset that supports growth and AI-enabled execution.</p>
             <ul>
-              <li>Website strategy and restructuring</li>
-              <li>Migration planning from no-code setups</li>
-              <li>Conversion-focused custom site direction</li>
+              <li data-i18n="service-3-bullet-1">Website strategy and restructuring</li>
+              <li data-i18n="service-3-bullet-2">Migration planning from no-code setups</li>
+              <li data-i18n="service-3-bullet-3">Conversion-focused custom site direction</li>
             </ul>
           </article>
         </div>
@@ -855,30 +865,27 @@
     <section id="why">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2>Why this is different</h2>
-          <p class="text">
-            The site should make one thing obvious: this is not generic agency packaging. The value is in better decisions, stronger systems, and a more capable company.
-            <span class="ua-inline">Тут має бути очевидно одне: це не типова агентська упаковка. Цінність — у кращих рішеннях, сильніших системах і більш спроможній компанії.</span>
-          </p>
+          <h2 data-i18n="why-title">Why this is different</h2>
+          <p class="text" data-i18n="why-sub">This is not generic agency packaging. The value is in better decisions, stronger systems, cleaner execution, and a company that becomes more capable after the work is done.</p>
         </div>
         <div class="proof-grid">
           <article class="proof-card accent-orange reveal">
-            <div class="stat-label">Signal 01</div>
-            <div class="stat-value">CMO</div>
-            <h3>Strategic level thinking</h3>
-            <p>You get senior marketing judgment, not just output production.<span class="ua-inline" style="color:rgba(255,255,255,0.82);">Ви отримуєте senior-рівень маркетингового судження, а не лише виробництво задач.</span></p>
+            <div class="stat-label" data-i18n="proof-1-label">Signal 01</div>
+            <div class="stat-value" data-i18n="proof-1-value">CMO</div>
+            <h3 data-i18n="proof-1-title">Strategic marketing judgment</h3>
+            <p data-i18n="proof-1-text">You get senior-level marketing thinking, not just production capacity.</p>
           </article>
           <article class="proof-card accent-light reveal">
-            <div class="stat-label">Signal 02</div>
-            <div class="stat-value" style="color:var(--blue);">AI</div>
-            <h3>Operational AI integration</h3>
-            <p>AI is treated as infrastructure for speed, consistency, and leverage.<span class="ua-inline">AI тут — це інфраструктура для швидкості, стабільності та ефекту важеля.</span></p>
+            <div class="stat-label" data-i18n="proof-2-label">Signal 02</div>
+            <div class="stat-value" style="color:var(--blue);" data-i18n="proof-2-value">AI</div>
+            <h3 data-i18n="proof-2-title">Operational AI integration</h3>
+            <p data-i18n="proof-2-text">AI is used as infrastructure for speed, consistency, and better leverage across the business.</p>
           </article>
           <article class="proof-card accent-dark reveal">
-            <div class="stat-label">Signal 03</div>
-            <div class="stat-value">Build</div>
-            <h3>System builder mindset</h3>
-            <p>Processes, websites, workflows, and knowledge systems are designed to keep compounding after launch.<span class="ua-inline" style="color:rgba(255,255,255,0.82);">Процеси, сайти, workflow і knowledge systems будуються так, щоб продовжувати давати ефект після запуску.</span></p>
+            <div class="stat-label" data-i18n="proof-3-label">Signal 03</div>
+            <div class="stat-value" data-i18n="proof-3-value">Build</div>
+            <h3 data-i18n="proof-3-title">Systems that keep compounding</h3>
+            <p data-i18n="proof-3-text">Processes, websites, workflows, and knowledge systems are designed to keep creating value after launch.</p>
           </article>
         </div>
       </div>
@@ -887,27 +894,24 @@
     <section id="process">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2>How I work</h2>
-          <p class="text">
-            The process is simple on purpose: diagnose what is actually broken, decide what matters most, then implement systems that improve output and reduce waste.
-            <span class="ua-inline">Процес навмисно простий: знайти реальну проблему, визначити пріоритети, а потім впровадити систему, що підвищує результат і зменшує втрати.</span>
-          </p>
+          <h2 data-i18n="process-title">How I work</h2>
+          <p class="text" data-i18n="process-sub">The process is intentionally simple: find the real bottleneck, define the highest-value fix, and implement a system the business can actually use.</p>
         </div>
         <div class="process">
           <article class="process-step reveal">
-            <span>01 · Diagnose</span>
-            <h3>Find the real bottleneck</h3>
-            <p>Positioning confusion, execution drag, team inconsistency, weak web infrastructure, or a fake-AI problem where tools exist but business impact does not.<span class="ua-inline">Плутанина в позиціонуванні, повільне виконання, нестабільність команди, слабка web-інфраструктура або фейковий AI без бізнес-ефекту.</span></p>
+            <span data-i18n="step-1-label">01 · Diagnose</span>
+            <h3 data-i18n="step-1-title">Find the real bottleneck</h3>
+            <p data-i18n="step-1-text">Positioning confusion, execution drag, team inconsistency, weak web infrastructure, or “AI activity” with no business impact.</p>
           </article>
           <article class="process-step reveal">
-            <span>02 · Design</span>
-            <h3>Shape the operating system</h3>
-            <p>Define what the team needs: messaging system, workflow stack, knowledge layer, AI-enabled process, or a better website architecture.<span class="ua-inline">Визначити, що саме потрібно команді: систему повідомлень, workflow stack, knowledge layer, AI-процес або кращу архітектуру сайту.</span></p>
+            <span data-i18n="step-2-label">02 · Design</span>
+            <h3 data-i18n="step-2-title">Shape the operating system</h3>
+            <p data-i18n="step-2-text">Define the right mix of messaging, workflows, knowledge systems, AI processes, and web structure.</p>
           </article>
           <article class="process-step reveal">
-            <span>03 · Implement</span>
-            <h3>Make it usable in the real business</h3>
-            <p>Ship a system people can actually work with — faster, clearer, and less dependent on expensive patchwork hiring.<span class="ua-inline">Запустити систему, з якою реально можна працювати в бізнесі — швидше, ясніше й з меншою залежністю від дорогого точкового найму.</span></p>
+            <span data-i18n="step-3-label">03 · Implement</span>
+            <h3 data-i18n="step-3-title">Make it usable in the real business</h3>
+            <p data-i18n="step-3-text">Launch something the team can actually use — faster, clearer, and less dependent on expensive patchwork hiring.</p>
           </article>
         </div>
       </div>
@@ -918,29 +922,24 @@
         <div class="cta-panel reveal">
           <div class="cta-copy">
             <div class="eyebrow" data-i18n="contact-eyebrow">Start the conversation</div>
-            <h2>Let’s build a sharper marketing system</h2>
-            <p class="text" style="font-size:18px;color:#2a2723;max-width:58ch;">
-              If your team needs stronger positioning, practical AI implementation, or a company-level marketing AI brain, this is where the conversation starts.
-              <span class="ua-inline">Якщо команді потрібні сильніше позиціонування, практичне впровадження AI або маркетинговий AI-brain на рівні компанії — розмова починається тут.</span>
-            </p>
+            <h2 data-i18n="contact-title">Let’s build a sharper marketing system</h2>
+            <p class="text" style="font-size:18px;color:#2a2723;max-width:58ch;" data-i18n="contact-text">If your team needs stronger positioning, practical AI implementation, or a company-level marketing AI brain, this is where the conversation starts.</p>
             <div class="cta-actions">
               <a class="cta" href="mailto:marketinggrizly@gmail.com" data-i18n="contact-cta-primary">Book an intro</a>
               <a class="cta-secondary" href="#services" data-i18n="contact-cta-secondary">Review services</a>
             </div>
           </div>
           <div class="cta-notes">
-            <div class="note">Best fit: B2B SaaS and service companies that need senior marketing direction plus real implementation leverage.<span class="ua-inline">Найкращий fit: B2B SaaS і сервісні компанії, яким потрібні senior-рівень маркетингового напрямку та реальна здатність до впровадження.</span></div>
-            <div class="note">Typical outcomes: clearer priorities, stronger marketing systems, faster team throughput, less wasted spend, and less need for fragmented specialist hiring.<span class="ua-inline">Типові результати: ясніші пріоритети, сильніші маркетингові системи, вища швидкість команди, менше зайвих витрат і менша потреба в хаотичному наймі спеціалістів.</span></div>
-            <div class="note">Primary language: English. Secondary support: Ukrainian.<span class="ua-inline">Основна мова: англійська. Додаткова: українська.</span></div>
+            <div class="note" data-i18n="contact-note-1">Best fit: B2B SaaS and service companies that need senior marketing direction plus real implementation leverage.</div>
+            <div class="note" data-i18n="contact-note-2">Typical outcomes: clearer priorities, stronger marketing systems, faster team throughput, less wasted spend, and less need for fragmented specialist hiring.</div>
+            <div class="note" data-i18n="contact-note-3">Language support: English and Ukrainian.</div>
           </div>
         </div>
       </div>
     </section>
 
     <footer>
-      <div class="wrap footer-note">
-        First concept homepage · built as an original reference-led direction, not a direct clone of any source site.
-      </div>
+      <div class="wrap footer-note" data-i18n="footer-note">First concept homepage · built as an original reference-led direction, not a direct clone of any source site.</div>
     </footer>
   </div>
 
@@ -955,28 +954,186 @@
 
     const i18n = {
       en: {
+        pageTitle: 'Professor — Fractional CMO + Marketing AI Brain Systems',
+        pageDescription: 'Fractional CMO for B2B SaaS and service companies. I help teams build stronger positioning, practical AI systems, and company-level marketing AI brains that increase speed, quality, and efficiency.',
+        brandSubline: 'Fractional CMO · Marketing AI Systems',
         'nav-services': 'Services',
         'nav-why': 'Why me',
         'nav-process': 'Process',
         'nav-cta': 'Book intro call',
-        'lang-note': 'English is primary. Ukrainian is included below the key sections.',
+        'lang-note': 'English is primary. Switch to Ukrainian for a fully localized version.',
+        'hero-eyebrow': 'Fractional CMO for B2B SaaS and service companies',
+        'hero-title': 'Build a stronger marketing operating system',
+        'hero-sub': 'I help B2B companies sharpen positioning, improve execution, and implement practical AI across marketing and operations — including company-level marketing AI brains that increase speed, improve quality, and save thousands of dollars in avoidable hiring overhead.',
         'hero-cta-primary': 'Discuss your growth system',
         'hero-cta-secondary': 'See services',
+        'metric-1-label': 'Positioning',
+        'metric-1-value': 'Sharpen your message so buyers understand why you are the right choice.',
+        'metric-2-label': 'AI operations',
+        'metric-2-value': 'Implement AI workflows that increase speed without lowering quality.',
+        'metric-3-label': 'Web infrastructure',
+        'metric-3-value': 'Move beyond no-code limitations into a flexible site built for growth.',
+        'brain-eyebrow': 'What I actually build',
+        'brain-title': 'Marketing AI brain',
+        'brain-sub': 'Not AI for show. A company-level system for knowledge, speed, execution quality, and repeatable decisions.',
+        'brain-node-1-title': 'Knowledge layer',
+        'brain-node-1-text': 'Messaging, playbooks, best practices, source materials, and team context in one working memory.',
+        'brain-node-2-title': 'Execution layer',
+        'brain-node-2-text': 'AI-assisted research, briefs, content prep, summaries, and internal operating support.',
+        'brain-node-3-title': 'Decision layer',
+        'brain-node-3-text': 'Sharper prioritization, fewer blind spots, and more consistent standards across the team.',
+        'brain-node-4-title': 'Speed layer',
+        'brain-node-4-text': 'Faster iterations, fewer specialist bottlenecks, and less wasted time.',
+        'offer-title': 'Operator, not observer',
+        'offer-text': 'I work at the level of strategy, systems, and implementation — not just advice decks and surface-level recommendations.',
+        'offer-point-1': 'Fractional CMO leadership for B2B companies that need senior direction without a full-time CMO hire.',
+        'offer-point-2': 'AI implementation and marketing AI brain systems that improve real team throughput and decision quality.',
+        'offer-point-3': 'Migration from limiting no-code setups to flexible custom websites built for growth.',
+        'services-title': 'Services',
+        'services-sub': 'This is a senior operating partner offer: strategy where it matters, implementation where it moves results, and systems that keep making the team stronger after the engagement.',
+        'service-1-tag': 'Fractional CMO',
+        'service-1-title': 'Senior marketing leadership without a full-time CMO hire',
+        'service-1-text': 'For B2B SaaS and service companies that need clarity, prioritization, and strong executive-level marketing judgment.',
+        'service-1-bullet-1': 'Positioning and messaging correction',
+        'service-1-bullet-2': 'Growth priorities and channel focus',
+        'service-1-bullet-3': 'Team orchestration and decision support',
+        'service-2-tag': 'AI implementation',
+        'service-2-title': 'Practical AI systems for marketing and operations',
+        'service-2-text': 'AI that helps the company move faster, raise quality, and reduce dependence on fragmented specialist hiring.',
+        'service-2-bullet-1': 'Marketing AI brain architecture',
+        'service-2-bullet-2': 'Workflow automation and prompt systems',
+        'service-2-bullet-3': 'Research, briefs, content, and internal knowledge workflows',
+        'service-3-tag': 'Web migration',
+        'service-3-title': 'From no-code limits to flexible growth infrastructure',
+        'service-3-text': 'When tools like Webflow become constraining, I help rethink the site as a flexible business asset that supports growth and AI-enabled execution.',
+        'service-3-bullet-1': 'Website strategy and restructuring',
+        'service-3-bullet-2': 'Migration planning from no-code setups',
+        'service-3-bullet-3': 'Conversion-focused custom site direction',
+        'why-title': 'Why this is different',
+        'why-sub': 'This is not generic agency packaging. The value is in better decisions, stronger systems, cleaner execution, and a company that becomes more capable after the work is done.',
+        'proof-1-label': 'Signal 01',
+        'proof-1-value': 'CMO',
+        'proof-1-title': 'Strategic marketing judgment',
+        'proof-1-text': 'You get senior-level marketing thinking, not just production capacity.',
+        'proof-2-label': 'Signal 02',
+        'proof-2-value': 'AI',
+        'proof-2-title': 'Operational AI integration',
+        'proof-2-text': 'AI is used as infrastructure for speed, consistency, and better leverage across the business.',
+        'proof-3-label': 'Signal 03',
+        'proof-3-value': 'Build',
+        'proof-3-title': 'Systems that keep compounding',
+        'proof-3-text': 'Processes, websites, workflows, and knowledge systems are designed to keep creating value after launch.',
+        'process-title': 'How I work',
+        'process-sub': 'The process is intentionally simple: find the real bottleneck, define the highest-value fix, and implement a system the business can actually use.',
+        'step-1-label': '01 · Diagnose',
+        'step-1-title': 'Find the real bottleneck',
+        'step-1-text': 'Positioning confusion, execution drag, team inconsistency, weak web infrastructure, or “AI activity” with no business impact.',
+        'step-2-label': '02 · Design',
+        'step-2-title': 'Shape the operating system',
+        'step-2-text': 'Define the right mix of messaging, workflows, knowledge systems, AI processes, and web structure.',
+        'step-3-label': '03 · Implement',
+        'step-3-title': 'Make it usable in the real business',
+        'step-3-text': 'Launch something the team can actually use — faster, clearer, and less dependent on expensive patchwork hiring.',
         'contact-eyebrow': 'Start the conversation',
+        'contact-title': 'Let’s build a sharper marketing system',
+        'contact-text': 'If your team needs stronger positioning, practical AI implementation, or a company-level marketing AI brain, this is where the conversation starts.',
         'contact-cta-primary': 'Book an intro',
-        'contact-cta-secondary': 'Review services'
+        'contact-cta-secondary': 'Review services',
+        'contact-note-1': 'Best fit: B2B SaaS and service companies that need senior marketing direction plus real implementation leverage.',
+        'contact-note-2': 'Typical outcomes: clearer priorities, stronger marketing systems, faster team throughput, less wasted spend, and less need for fragmented specialist hiring.',
+        'contact-note-3': 'Language support: English and Ukrainian.',
+        'footer-note': 'First concept homepage · built as an original reference-led direction, not a direct clone of any source site.'
       },
       ua: {
+        pageTitle: 'Professor — Зовнішній CMO та маркетингові AI-системи',
+        pageDescription: 'Зовнішній CMO для B2B SaaS і сервісних компаній. Допомагаю з позиціонуванням, практичним впровадженням AI та побудовою маркетингових AI-систем, які підвищують швидкість, якість і ефективність.',
+        brandSubline: 'Зовнішній CMO · Маркетингові AI-системи',
         'nav-services': 'Послуги',
         'nav-why': 'Чому я',
         'nav-process': 'Процес',
         'nav-cta': 'Забронювати дзвінок',
-        'lang-note': 'Українську версію ввімкнено для ключових секцій цієї сторінки.',
+        'lang-note': 'Українську версію повністю локалізовано для цієї сторінки.',
+        'hero-eyebrow': 'Зовнішній CMO для B2B SaaS і сервісних компаній',
+        'hero-title': 'Побудуйте сильнішу маркетингову операційну систему',
+        'hero-sub': 'Я допомагаю B2B-компаніям точніше сформулювати позиціонування, посилити виконання та впровадити практичний AI у маркетинг і операційну систему компанії — включно з маркетинговими AI-системами на рівні компанії, які підвищують швидкість, покращують якість і економлять тисячі доларів на зайвому наймі.',
         'hero-cta-primary': 'Обговорити вашу систему росту',
-        'hero-cta-secondary': 'Подивитися послуги',
+        'hero-cta-secondary': 'Переглянути послуги',
+        'metric-1-label': 'Позиціонування',
+        'metric-1-value': 'Уточнюємо повідомлення так, щоб клієнт одразу розумів, чому варто обрати саме вас.',
+        'metric-2-label': 'AI в операційці',
+        'metric-2-value': 'Впроваджуємо AI-процеси, які прискорюють команду без просідання якості.',
+        'metric-3-label': 'Веб-інфраструктура',
+        'metric-3-value': 'Переходимо від обмежень конструкторів сайтів до гнучкого сайту, створеного для росту.',
+        'brain-eyebrow': 'Що саме я будую',
+        'brain-title': 'Маркетингова AI-система знань',
+        'brain-sub': 'Не AI для галочки, а система на рівні компанії для знань, швидкості, якості виконання та повторювано кращих рішень.',
+        'brain-node-1-title': 'Шар знань',
+        'brain-node-1-text': 'Повідомлення, робочі інструкції, найкращі практики, вихідні матеріали та командний контекст в одній робочій пам’яті.',
+        'brain-node-2-title': 'Шар виконання',
+        'brain-node-2-text': 'AI-підсилені дослідження, брифи, підготовка контенту, самарі та внутрішня операційна підтримка.',
+        'brain-node-3-title': 'Шар рішень',
+        'brain-node-3-text': 'Чіткіша пріоритизація, менше сліпих зон і стабільніший стандарт роботи в команді.',
+        'brain-node-4-title': 'Шар швидкості',
+        'brain-node-4-text': 'Швидші ітерації, менше вузьких місць через окремих спеціалістів і менше втрат часу.',
+        'offer-title': 'Не спостерігач, а оператор',
+        'offer-text': 'Я працюю на рівні стратегії, систем і впровадження — а не лише у форматі порад, презентацій і поверхневих рекомендацій.',
+        'offer-point-1': 'Зовнішній CMO для B2B-компаній, яким потрібне сильне маркетингове керування без найму директора з маркетингу у штат.',
+        'offer-point-2': 'Впровадження AI та маркетингових AI-систем, які реально підвищують пропускну здатність команди та якість рішень.',
+        'offer-point-3': 'Міграція з обмежувальних конструкторів сайтів до гнучких кастомних сайтів, створених під ріст.',
+        'services-title': 'Послуги',
+        'services-sub': 'Це формат стратегічного операційного партнера: стратегія там, де вона критична, впровадження там, де воно дає результат, і системи, що продовжують посилювати команду після співпраці.',
+        'service-1-tag': 'Зовнішній CMO',
+        'service-1-title': 'Маркетинг-лідерство старшого рівня без найму директора з маркетингу у штат',
+        'service-1-text': 'Для B2B SaaS і сервісних компаній, яким потрібні ясність, пріоритети та сильне маркетингове судження на рівні керівництва.',
+        'service-1-bullet-1': 'Корекція позиціонування та повідомлень',
+        'service-1-bullet-2': 'Пріоритети росту та фокус по каналах',
+        'service-1-bullet-3': 'Оркестрація команди та підтримка управлінських рішень',
+        'service-2-tag': 'AI впровадження',
+        'service-2-title': 'Практичні AI-системи для маркетингу й операційки',
+        'service-2-text': 'AI, який реально прискорює компанію, підвищує якість і зменшує залежність від хаотичного найму вузьких спеціалістів.',
+        'service-2-bullet-1': 'Архітектура маркетингової AI-системи знань',
+        'service-2-bullet-2': 'Автоматизація робочих процесів і систем запитів',
+        'service-2-bullet-3': 'Дослідження, брифи, контент і внутрішні процеси керування знаннями',
+        'service-3-tag': 'Веб-міграція',
+        'service-3-title': 'Від обмежень конструкторів сайтів до гнучкої інфраструктури для росту',
+        'service-3-text': 'Коли інструменти на кшталт Webflow починають стримувати ріст, я допомагаю переосмислити сайт як гнучкий бізнес-актив, який підтримує зростання та AI-процеси.',
+        'service-3-bullet-1': 'Стратегія сайту та реструктуризація',
+        'service-3-bullet-2': 'Планування міграції з конструктора сайтів',
+        'service-3-bullet-3': 'Напрям для кастомного сайту з фокусом на конверсію',
+        'why-title': 'Чим це відрізняється',
+        'why-sub': 'Це не типова агентська упаковка. Цінність — у кращих рішеннях, сильніших системах, чистішому виконанні та компанії, яка після співпраці стає спроможнішою.',
+        'proof-1-label': 'Сигнал 01',
+        'proof-1-value': 'CMO',
+        'proof-1-title': 'Стратегічне маркетингове судження',
+        'proof-1-text': 'Ви отримуєте рівень стратегічного маркетингового мислення, а не просто додаткові руки на виробництво задач.',
+        'proof-2-label': 'Сигнал 02',
+        'proof-2-value': 'AI',
+        'proof-2-title': 'Інтеграція AI в операційну систему',
+        'proof-2-text': 'AI тут використовується як інфраструктура для швидкості, стабільності й ефекту важеля в бізнесі.',
+        'proof-3-label': 'Сигнал 03',
+        'proof-3-value': 'Система',
+        'proof-3-title': 'Системи, що продовжують давати результат',
+        'proof-3-text': 'Процеси, сайти, робочі процеси та системи знань будуються так, щоб створювати цінність і після запуску.',
+        'process-title': 'Як я працюю',
+        'process-sub': 'Процес навмисно простий: знайти реальне вузьке місце, визначити найцінніше рішення й впровадити систему, з якою бізнес реально може працювати.',
+        'step-1-label': '01 · Діагностика',
+        'step-1-title': 'Знайти справжнє вузьке місце',
+        'step-1-text': 'Плутанина в позиціонуванні, повільне виконання, нестабільність команди, слабка веб-інфраструктура або “AI-активність” без бізнес-ефекту.',
+        'step-2-label': '02 · Проєктування',
+        'step-2-title': 'Сформувати операційну систему',
+        'step-2-text': 'Визначити правильну комбінацію повідомлень, робочих процесів, систем знань, AI-процесів і веб-структури.',
+        'step-3-label': '03 · Впровадження',
+        'step-3-title': 'Зробити це придатним для реального бізнесу',
+        'step-3-text': 'Запустити те, чим команда реально користуватиметься — швидше, ясніше й з меншою залежністю від дорогого точкового найму.',
         'contact-eyebrow': 'Почнімо розмову',
-        'contact-cta-primary': 'Забронювати інтро',
-        'contact-cta-secondary': 'Переглянути послуги'
+        'contact-title': 'Побудуймо сильнішу маркетингову систему',
+        'contact-text': 'Якщо вашій команді потрібні сильніше позиціонування, практичне впровадження AI або маркетингова AI-система на рівні компанії — розмова починається тут.',
+        'contact-cta-primary': 'Забронювати перший дзвінок',
+        'contact-cta-secondary': 'Переглянути послуги',
+        'contact-note-1': 'Найкраще підходить B2B SaaS і сервісним компаніям, яким потрібні сильний маркетинговий напрямок і реальна здатність до впровадження.',
+        'contact-note-2': 'Типові результати: ясніші пріоритети, сильніші маркетингові системи, вища швидкість команди, менше зайвих витрат і менша потреба в хаотичному наймі.',
+        'contact-note-3': 'Підтримка мов: англійська та українська.',
+        'footer-note': 'Перша концепція головної сторінки · створена як оригінальний напрям на основі референсів, а не як пряме копіювання будь-якого джерела.'
       }
     };
 
@@ -990,6 +1147,12 @@
         const key = el.dataset.i18n;
         if (i18n[lang] && i18n[lang][key]) el.textContent = i18n[lang][key];
       });
+
+      document.title = i18n[lang].pageTitle;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) metaDescription.setAttribute('content', i18n[lang].pageDescription);
+      const brandSubline = document.querySelector('[data-brand-subline]');
+      if (brandSubline) brandSubline.textContent = i18n[lang].brandSubline;
 
       document.querySelectorAll('.lang-btn').forEach((btn) => {
         btn.classList.toggle('is-active', btn.dataset.lang === lang);
