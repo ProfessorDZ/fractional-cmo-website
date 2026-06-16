@@ -107,13 +107,16 @@
   details.item summary{list-style:none;cursor:pointer;padding:22px 24px;display:flex;align-items:center;gap:16px}
   details.item summary::-webkit-details-marker{display:none}
   .item .lvl{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.5px}
-  .item .name{font-weight:700;font-size:17px;margin-top:3px}
+  .item .name{font-family:'Bebas Neue Cyrillic','Oswald',sans-serif;font-weight:700;font-size:21px;letter-spacing:.4px;text-transform:uppercase;line-height:1.05;margin-top:5px}
   .item .chev{margin-left:auto;flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--panel2);display:flex;align-items:center;justify-content:center;font-size:18px;transition:.2s;color:var(--accent)}
   details[open] .chev{transform:rotate(45deg);background:var(--accent);color:var(--ink)}
-  .item .body{padding:0 24px 24px}
-  .item .body ul{margin:0 0 16px 18px;color:var(--muted);font-size:14px;display:flex;flex-direction:column;gap:5px}
-  .item .res{background:var(--panel2);border-radius:12px;padding:16px 18px}
-  .item .res .rt{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);margin-bottom:6px}
+  .item .body{padding:2px 20px 22px}
+  .item .lessons{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+  .lesson{display:flex;align-items:center;gap:13px;background:#0f1208;border:1px solid var(--line);border-radius:12px;padding:15px 18px;font-size:15px;color:#e7ead9}
+  .lesson .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:0 0 auto}
+  .item .res{background:#23290e;border:1px solid rgba(198,242,78,.22);border-radius:14px;padding:18px 20px}
+  .item .res .rt{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);margin-bottom:8px}
+  .item .res .ck{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--accent);display:inline-flex;align-items:center;justify-content:center;font-size:11px;flex:0 0 auto}
   .item .res p{font-size:14px;color:#d6dac9}
 
   .na{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}
@@ -484,7 +487,7 @@ const modules = [
 document.getElementById('modules').innerHTML = modules.map(([lvl,name,les,res])=>`
   <details class="item">
     <summary><div><div class="lvl">${lvl}</div><div class="name">${name}</div></div><span class="chev">+</span></summary>
-    <div class="body"><ul>${les.split(' · ').map(x=>`<li>${x}</li>`).join('')}</ul><div class="res"><div class="rt">Результат модуля</div><p>${res}</p></div></div>
+    <div class="body"><div class="lessons">${les.split(' · ').map(x=>`<div class="lesson"><span class="dot"></span>${x}</div>`).join('')}</div><div class="res"><div class="rt"><span class="ck">✓</span>Результат модуля</div><p>${res}</p></div></div>
   </details>`).join('');
 
 const faq = [
