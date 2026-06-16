@@ -157,6 +157,25 @@
   .cv.after .salary b{color:var(--accent)}
   .cv .salary span{font-size:12px;color:var(--muted)}
 
+  .outcomes{margin-top:40px;display:flex;flex-direction:column;gap:52px}
+  .outcome .oc-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+  .outcome h3{font-family:'Bebas Neue Cyrillic','Oswald',sans-serif;font-size:clamp(26px,3.4vw,36px);letter-spacing:.4px;text-transform:uppercase;line-height:1}
+  .outcome .cnt{font-family:'Bebas Neue Cyrillic','Oswald',sans-serif;font-size:22px;color:var(--accent);flex:0 0 auto}
+  .outcome .desc{color:var(--muted);font-size:16px;margin-top:10px;max-width:760px}
+  .shots{display:flex;gap:14px;margin-top:20px;overflow-x:auto;padding-bottom:8px}
+  .shots::-webkit-scrollbar{height:8px}.shots::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
+  .shot{flex:0 0 auto;border:1px solid var(--line);border-radius:14px;background:var(--panel2);display:flex;align-items:center;justify-content:center;color:#5b6147;font-size:13px;text-align:center;padding:10px}
+  .shot.phone{width:150px;aspect-ratio:9/18}
+  .shot.wide{width:300px;aspect-ratio:7/5}
+  .shot.cert{width:420px;max-width:80vw;aspect-ratio:10/7;background:#f4f4ef;color:#9aa08c}
+
+  .format{margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .format-h{font-family:'Bebas Neue Cyrillic','Oswald',sans-serif;font-size:24px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:18px}
+  .format-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 24px}
+  @media(max-width:620px){.format-grid{grid-template-columns:1fr}}
+  .fitem{display:flex;align-items:center;gap:11px;font-size:14px;color:#d6dac9}
+  .fitem .fdot{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;flex:0 0 auto}
+
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px;align-items:start}
   @media(max-width:920px){.plans{grid-template-columns:1fr}}
   .plan{border:1px solid var(--line);border-radius:20px;padding:30px;background:var(--panel);position:relative}
@@ -321,8 +340,20 @@
       <details class="item"><summary><div><div class="lvl">Модуль 10</div><div class="name">Фінанси (ч.1) — бонус</div></div><span class="chev">+</span></summary><div class="body"><div class="lessons"><div class="lesson"><span class="dot"></span>Чи прибутковий відділ продажів</div><div class="lesson"><span class="dot"></span>P&amp;L</div><div class="lesson"><span class="dot"></span>Cash Flow</div></div><div class="res"><div class="rt"><span class="ck">✓</span>Результат модуля</div><p>Ви читаєте фінансові звіти й бачите вплив відділу на прибуток компанії.</p></div></div></details>
       <details class="item"><summary><div><div class="lvl">Модуль 11</div><div class="name">Фінанси (ч.2) — бонус</div></div><span class="chev">+</span></summary><div class="body"><div class="lessons"><div class="lesson"><span class="dot"></span>Платіжний календар</div><div class="lesson"><span class="dot"></span>Категорії витрат</div><div class="lesson"><span class="dot"></span>Управління грошовим потоком відділу</div></div><div class="res"><div class="rt"><span class="ck">✓</span>Результат модуля</div><p>Ви плануєте фінанси відділу та аргументуєте рішення цифрами.</p></div></div></details>
     </div>
-    <div class="card" style="margin-top:26px;font-size:14px;color:var(--muted)">
-      <b style="color:#fff">Формат:</b> записані відеоуроки + живі зустрічі · ДЗ з перевіркою куратором · Q&amp;A ×4 · Peer-to-peer ×4 · тести після кожного модуля · закрита Telegram-група · воркбук · е-сертифікат · Ukrainian Sales Club 3 міс · доступ до t10.
+    <div class="format">
+      <div class="format-h">Формат навчання</div>
+      <div class="format-grid">
+        <div class="fitem"><span class="fdot">✓</span>Записані відеоуроки + живі зустрічі</div>
+        <div class="fitem"><span class="fdot">✓</span>ДЗ з перевіркою куратором</div>
+        <div class="fitem"><span class="fdot">✓</span>Q&amp;A-сесії з Андрієм ×4</div>
+        <div class="fitem"><span class="fdot">✓</span>Peer-to-peer зустрічі ×4</div>
+        <div class="fitem"><span class="fdot">✓</span>Тести після кожного модуля</div>
+        <div class="fitem"><span class="fdot">✓</span>Закрита Telegram-група</div>
+        <div class="fitem"><span class="fdot">✓</span>Воркбук</div>
+        <div class="fitem"><span class="fdot">✓</span>Електронний сертифікат</div>
+        <div class="fitem"><span class="fdot">✓</span>Ukrainian Sales Club — 3 місяці</div>
+        <div class="fitem"><span class="fdot">✓</span>Доступ до t10</div>
+      </div>
     </div>
     <div style="text-align:center;margin-top:30px"><a href="#pricing" class="btn btn-accent">Залишити заявку</a></div>
   </div>
@@ -355,39 +386,36 @@
   </div>
 </section>
 
-<!-- CV TRANSFORMATION -->
+<!-- OUTCOMES -->
 <section class="soft">
   <div class="container">
-    <div class="tag"><i></i>Трансформація</div>
-    <h2>Як зміниться ваше резюме<br>після курсу</h2>
-    <p class="lead">Ви виходите з курсу не зі «ще одним сертифікатом», а з резюме керівника, яке хочуть бачити роботодавці.</p>
-    <div class="cv-grid">
-      <div class="cv before">
-        <div class="cv-top">
-          <div class="ava">👤</div>
-          <div class="who"><div class="role">Менеджер з продажів</div><div class="stage">До курсу</div></div>
-        </div>
-        <div class="cv-body">
-          <div class="lbl">Навички</div>
-          <div class="skills"><span>Продажі</span><span>Робота з CRM</span><span>Холодні дзвінки</span><span>Закриття угод</span></div>
-          <div class="lbl">Посада</div>
-          <div class="skills"><span>Менеджер / тімлід</span></div>
-          <div class="salary"><b>$1000–1500</b><span>очікувана з/п</span></div>
-        </div>
+    <div class="tag"><i></i>Результати навчання</div>
+    <h2>Що ви отримаєте<br>наприкінці курсу</h2>
+    <div class="outcomes">
+      <div class="outcome">
+        <div class="oc-head"><h3>Опанували професію</h3><span class="cnt">1 / 5</span></div>
+        <p class="desc">Будуєте відділ продажів системно: структура, найм, мотивація, планування по OKR, контроль і автоматизація. Не теорія, а готові регламенти й чек-листи, які впроваджуєте одразу.</p>
+        <div class="shots"><div class="shot phone">скрін уроку</div><div class="shot phone">воркбук</div><div class="shot phone">чек-лист</div><div class="shot phone">ДЗ з фідбеком</div></div>
       </div>
-      <div class="cv after">
-        <div class="cv-top">
-          <div class="ava">🚀</div>
-          <div class="who"><div class="role">Керівник відділу продажів</div><div class="stage">Після курсу</div></div>
-          <span class="badge2">Head of Sales</span>
-        </div>
-        <div class="cv-body">
-          <div class="lbl">Навички</div>
-          <div class="skills"><span>Побудова відділу з нуля</span><span>Найм і адаптація команди</span><span>Системи мотивації та KPI</span><span>Планування й OKR</span><span>Автоматизація: CRM, телефонія, t10</span><span>Управління та фінанси відділу</span></div>
-          <div class="lbl">Сертифікат</div>
-          <div class="skills"><span>Професія Head of Sales 2.0 · Академія продажів</span></div>
-          <div class="salary"><b>від 3 000 €</b><span>очікувана з/п</span></div>
-        </div>
+      <div class="outcome">
+        <div class="oc-head"><h3>Підвищення до КВП</h3><span class="cnt">2 / 5</span></div>
+        <p class="desc">Менеджери виходять на позицію керівника відділу продажів із доходом від 3 000 €, а діючі КВП підсилюють свою роль і вартість на ринку праці.</p>
+        <div class="shots"><div class="shot phone">оффер</div><div class="shot phone">переписка</div><div class="shot phone">нова посада</div><div class="shot phone">відгук</div></div>
+      </div>
+      <div class="outcome">
+        <div class="oc-head"><h3>Результат відділу</h3><span class="cnt">3 / 5</span></div>
+        <p class="desc">Відділ виконує план, конверсія й середній чек ростуть, плинність кадрів падає. Курс окупається результатом команди.</p>
+        <div class="shots"><div class="shot wide">дашборд CRM</div><div class="shot wide">динаміка плану</div><div class="shot wide">кейс відділу</div></div>
+      </div>
+      <div class="outcome">
+        <div class="oc-head"><h3>Сертифікат Head of Sales 2.0</h3><span class="cnt">4 / 5</span></div>
+        <p class="desc">Складаєте атестацію й отримуєте іменний сертифікат Академії продажів — підтвердження кваліфікації керівника для роботодавців.</p>
+        <div class="shots"><div class="shot cert">Сертифікат Head of Sales 2.0</div></div>
+      </div>
+      <div class="outcome">
+        <div class="oc-head"><h3>Спільнота Ukrainian Sales Club</h3><span class="cnt">5 / 5</span></div>
+        <p class="desc">Долучаєтесь до закритої спільноти комерсантів і випускників: нетворкінг, вакансії КВП, обмін досвідом і регулярні зустрічі.</p>
+        <div class="shots"><div class="shot wide">фото зустрічі</div><div class="shot wide">чат спільноти</div><div class="shot wide">нетворкінг</div></div>
       </div>
     </div>
   </div>
