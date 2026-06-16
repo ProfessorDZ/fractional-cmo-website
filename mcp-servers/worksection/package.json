@@ -1,0 +1,20 @@
+{
+  "name": "worksection-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Worksection (OAuth2) — list projects/users, create projects/tasks.",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "worksection-mcp": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "auth": "node bootstrap-auth.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
