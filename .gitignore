@@ -1,8 +1,1 @@
 .vercel
-
-# Secrets / local env — never commit OAuth tokens or credentials
-.env
-.env.*
-*.pem
-mcp-servers/**/node_modules
-mcp-servers/**/.tokens.json
