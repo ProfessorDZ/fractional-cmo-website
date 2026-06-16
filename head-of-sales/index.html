@@ -62,8 +62,9 @@
 
   .cards{display:grid;gap:20px;margin-top:38px}
   .c4{grid-template-columns:repeat(4,1fr)}
+  .c2{grid-template-columns:repeat(2,1fr)}
   @media(max-width:980px){.c4{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:620px){.c4{grid-template-columns:1fr}}
+  @media(max-width:620px){.c4,.c2{grid-template-columns:1fr}}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px}
   .card .ttl{font-weight:700;color:var(--accent);margin-bottom:10px;font-size:17px}
   .card p{color:var(--muted);font-size:15px}
@@ -90,6 +91,10 @@
   .author ul li{font-size:15px;color:#d6dac9;padding-left:22px;position:relative}
   .author ul li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
   .author .quote{margin-top:26px;font-size:18px;color:#fff;border-left:3px solid var(--accent);padding-left:18px;font-style:italic}
+  .socials{display:flex;gap:10px;margin:16px 0 6px}
+  .socials a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-weight:700;font-size:14px;transition:.2s}
+  .socials a:hover{border-color:var(--accent);color:var(--accent)}
+  .founder-label{font-family:'Bebas Neue Cyrillic','Oswald',sans-serif;font-size:18px;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
 
   .slider{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;margin-top:34px}
   .slider::-webkit-scrollbar{height:8px}.slider::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
@@ -129,6 +134,26 @@
   .na .row{display:flex;gap:12px;font-size:15px;margin-bottom:14px;color:#d6dac9}
   .na .now .row:before{content:"✕";color:#e0623f;font-weight:700}
   .na .aft .row:before{content:"✓";color:var(--accent);font-weight:700}
+
+  .cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}
+  @media(max-width:760px){.cv-grid{grid-template-columns:1fr}}
+  .cv{border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden}
+  .cv.after{border:2px solid var(--accent);box-shadow:0 24px 50px -24px rgba(198,242,78,.4)}
+  .cv .cv-top{display:flex;align-items:center;gap:14px;padding:22px 24px;border-bottom:1px solid var(--line);position:relative}
+  .cv .ava{width:54px;height:54px;border-radius:50%;background:var(--panel2);display:flex;align-items:center;justify-content:center;font-size:24px;flex:0 0 auto}
+  .cv.after .ava{background:rgba(198,242,78,.15)}
+  .cv .who .role{font-family:'Bebas Neue Cyrillic','Oswald',sans-serif;font-size:23px;letter-spacing:.4px;text-transform:uppercase;line-height:1}
+  .cv .who .stage{font-size:12px;color:var(--muted);margin-top:4px}
+  .cv .badge2{position:absolute;top:16px;right:18px;background:var(--accent);color:var(--ink);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:4px 10px;border-radius:999px}
+  .cv .cv-body{padding:20px 24px}
+  .cv .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin:0 0 10px}
+  .cv .skills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .cv .skills span{font-size:13px;border:1px solid var(--line);border-radius:8px;padding:6px 10px;color:#d6dac9}
+  .cv.after .skills span{border-color:rgba(198,242,78,.32)}
+  .cv .salary{display:flex;align-items:baseline;gap:8px;border-top:1px solid var(--line);padding-top:16px}
+  .cv .salary b{font-family:'Bebas Neue Cyrillic','Oswald',sans-serif;font-size:32px;line-height:1}
+  .cv.after .salary b{color:var(--accent)}
+  .cv .salary span{font-size:12px;color:var(--muted)}
 
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px;align-items:start}
   @media(max-width:920px){.plans{grid-template-columns:1fr}}
@@ -203,33 +228,16 @@
     <div>
       <p class="eyebrow">Курс для керівників відділів продажів (КВП)</p>
       <h1>Професія<br><span class="accent">Head of Sales</span></h1>
-      <p class="title">Побудуй ефективну систему у відділі продажів і отримай підвищення посади КВП</p>
-      <p class="text">За методологією найкращої консалтингової компанії з побудови відділів продажів 2026. Оновлений курс, змішаний формат, ~2,5 місяці.</p>
+      <p class="title">Побудуй систему у відділі продажів<br>і отримай підвищення посади КВП</p>
       <ul>
-        <li><span>▸</span> Менеджерам — шлях до позиції КВП і вищого доходу</li>
-        <li><span>▸</span> Керівникам — систематизувати відділ і підняти свою вартість на ринку <b>(від 5 000 €)</b></li>
-        <li><span>▸</span> Власникам і СЕО/СОО — як правильно побудувати й контролювати відділ продажів</li>
+        <li><span>▸</span> Менеджерам і тімлідам — шлях до позиції КВП і вищого доходу</li>
+        <li><span>▸</span> Діючим КВП — систематизувати відділ і підняти свою вартість на ринку <b>(від 3 000 €)</b></li>
       </ul>
       <a href="#pricing" class="btn btn-accent">Записатись на курс</a>
       <p class="meta">Старт 29 серпня · Доступ 6 місяців · Місць обмежено</p>
-      <div class="timer">⏳ Early Bird діє ще <b id="cd">14:23:50:11</b> — далі +50 € кожні 2 тижні</div>
+      <div class="timer">💸 До підйому ціни залишилось: <b id="cd">14:23:50:11</b></div>
     </div>
     <div class="visual">[ зображення / відео Андрія ]</div>
-  </div>
-</section>
-
-<!-- PAINS -->
-<section class="soft">
-  <div class="container">
-    <div class="tag"><i></i>Чому це важливо</div>
-    <h2>Чому ваш відділ продажів<br>не виконує план?</h2>
-    <p class="lead">І ні, проблема не в сезонності, не в «поганих лідах» і не в блекаутах. Найчастіше відділ працює без керівника, який вибудував систему.</p>
-    <div class="cards c4">
-      <div class="card"><div class="ttl">Немає системи</div><p>Кожен менеджер працює по-своєму, результат непрогнозований.</p></div>
-      <div class="card"><div class="ttl">Слабка мотивація</div><p>Немає чіткої системи KPI та бонусів — команда не зацікавлена.</p></div>
-      <div class="card"><div class="ttl">Все на власнику</div><p>КВП або власник тягне контроль на собі, замість делегування.</p></div>
-      <div class="card"><div class="ttl">Плинність кадрів</div><p>Людей складно наймати й утримувати, відділ не на максимум.</p></div>
-    </div>
   </div>
 </section>
 
@@ -238,15 +246,9 @@
   <div class="container">
     <div class="tag"><i></i>Для кого</div>
     <h2>Цей курс для вас, якщо ви:</h2>
-    <div class="cards c4">
+    <div class="cards c2">
       <div class="card"><div class="ttl">Менеджер / тімлід «на зріст»</div><p>Показуєте результат і хочете перейти на керівну позицію, але не знаєте, як отримати підвищення чи знайти роботу КВП без досвіду на посаді.</p></div>
       <div class="card"><div class="ttl">Діючий КВП</div><p>Керуєте «на інтуїції», плани не виконуються й незрозуміло чому. Хочете систематизувати підхід, зменшити плинність і підняти результат.</p></div>
-      <div class="card"><div class="ttl">Власник бізнесу</div><p>Самі керуєте відділом або щойно поставили КВП. Хочете зрозуміти, як це має правильно працювати, і делегувати усвідомлено.</p></div>
-      <div class="card"><div class="ttl">СЕО / СОО</div><p>Хочете навчитися результативно керувати КВП і впливати на показники продажів компанії.</p></div>
-    </div>
-    <div class="compare" style="margin-top:40px">
-      <div class="col"><h4>Продажі 2.0</h4><ul><li>Для менеджерів з продажів</li><li>Етапи продажів, технології переговорів</li><li>Про професію продавця</li></ul></div>
-      <div class="col hl"><h4>Head of Sales</h4><ul><li>Для КВП, власників, тімлідів на зріст, СЕО/СОО</li><li>Управління ВП, побудова команди й системи</li><li>Про професію керівника відділу продажів</li></ul></div>
     </div>
   </div>
 </section>
@@ -260,14 +262,18 @@
         <div class="tag"><i></i>Автор курсу</div>
         <h2>Андрій Крупкін</h2>
         <p class="lead">Пройшов шлях від менеджера з продажів до серійного підприємця.</p>
-        <div class="stats">
-          <div><div class="n">18+</div><div class="l">років у продажах</div></div>
-          <div><div class="n">184+</div><div class="l">відділів у 10+ країнах</div></div>
-          <div><div class="n">10 000+</div><div class="l">навчено продажам</div></div>
+        <div class="socials">
+          <a href="https://www.facebook.com/andrew.krupkin" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/andrew_krupkin/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
         </div>
+        <div class="stats">
+          <div><div class="n">18+</div><div class="l">років у сфері продажів</div></div>
+          <div><div class="n">184+</div><div class="l">побудованих відділів продажів</div></div>
+        </div>
+        <p class="founder-label">Засновник компаній:</p>
         <ul>
-          <li>Бюро продажів — міжнародна консалтингова компанія. Побудовано 184+ відділів продажів у 10+ країнах.</li>
-          <li>Академія продажів — рекрутинговий та освітній проєкт: 3000+ найнято, 10 000+ навчено.</li>
+          <li>Бюро продажів — міжнародна консалтингова компанія. Побудовано 184+ відділів продажів у 10+ країнах світу.</li>
+          <li>Академія продажів — рекрутинговий та освітній проєкт. За 8 років нанято понад 3000 людей та 10 000+ навчено продажам.</li>
           <li>Ukrainian Sales Club — закрита спільнота комерсантів.</li>
           <li>t10 — власна АІ-платформа для створення скриптів, аналізу та управління продажами.</li>
           <li>Автор «Найкращої книги з продажів».</li>
@@ -327,7 +333,7 @@
         <div class="row">Побудована система продажів і чіткий алгоритм роботи відділу</div>
         <div class="row">Команда найнята, адаптована й мотивована на результат</div>
         <div class="row">Впроваджено CRM, телефонію, Worksection і t10 — рутина автоматизована</div>
-        <div class="row">КВП піднімає свою вартість на ринку (від 5 000 €)</div>
+        <div class="row">КВП піднімає свою вартість на ринку (від 3 000 €)</div>
         <div class="row">Прозора аналітика: конверсії, ефективність, прогноз виручки</div>
       </div>
     </div>
@@ -335,8 +341,46 @@
   </div>
 </section>
 
-<!-- ADVANTAGES -->
+<!-- CV TRANSFORMATION -->
 <section class="soft">
+  <div class="container">
+    <div class="tag"><i></i>Трансформація</div>
+    <h2>Як зміниться ваше резюме<br>після курсу</h2>
+    <p class="lead">Ви виходите з курсу не зі «ще одним сертифікатом», а з резюме керівника, яке хочуть бачити роботодавці.</p>
+    <div class="cv-grid">
+      <div class="cv before">
+        <div class="cv-top">
+          <div class="ava">👤</div>
+          <div class="who"><div class="role">Менеджер з продажів</div><div class="stage">До курсу</div></div>
+        </div>
+        <div class="cv-body">
+          <div class="lbl">Навички</div>
+          <div class="skills"><span>Продажі</span><span>Робота з CRM</span><span>Холодні дзвінки</span><span>Закриття угод</span></div>
+          <div class="lbl">Посада</div>
+          <div class="skills"><span>Менеджер / тімлід</span></div>
+          <div class="salary"><b>$1000–1500</b><span>очікувана з/п</span></div>
+        </div>
+      </div>
+      <div class="cv after">
+        <div class="cv-top">
+          <div class="ava">🚀</div>
+          <div class="who"><div class="role">Керівник відділу продажів</div><div class="stage">Після курсу</div></div>
+          <span class="badge2">Head of Sales</span>
+        </div>
+        <div class="cv-body">
+          <div class="lbl">Навички</div>
+          <div class="skills"><span>Побудова відділу з нуля</span><span>Найм і адаптація команди</span><span>Системи мотивації та KPI</span><span>Планування й OKR</span><span>Автоматизація: CRM, телефонія, t10</span><span>Управління та фінанси відділу</span></div>
+          <div class="lbl">Сертифікат</div>
+          <div class="skills"><span>Професія Head of Sales · Академія продажів</span></div>
+          <div class="salary"><b>від 3 000 €</b><span>очікувана з/п</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section>
   <div class="container">
     <div class="tag"><i></i>Переваги</div>
     <h2>Що ви отримаєте</h2>
@@ -356,6 +400,7 @@
     <h2>Оберіть свій варіант участі</h2>
     <p class="lead">Прогресивна ціна: +50 € кожні 2 тижні. Можна забронювати ціну.</p>
     <p style="font-size:14px;color:var(--muted);margin-top:6px">Графік: 17.07 → 330/530 · 1.08 → 380/580 · 15.08 → 430/630 · 1.09 → 480/680</p>
+    <div class="timer" style="margin-top:14px;display:inline-flex;gap:8px;align-items:center;background:var(--panel);border:1px solid var(--line);padding:10px 16px;border-radius:999px;font-size:14px">💸 До підйому ціни залишилось: <b id="cd3" style="color:var(--accent)">14:23:50:11</b></div>
     <div class="plans">
       <div class="plan">
         <h3>Базовий</h3>
@@ -434,6 +479,7 @@
         <div class="f"><input type="tel" placeholder="Номер телефону" required></div>
         <div class="f"><input type="email" placeholder="Ваш email" required></div>
         <button type="submit" class="btn btn-accent" style="width:100%">Залишити заявку</button>
+        <p style="font-size:13px;color:var(--muted);margin-top:12px">Без спаму. Менеджер зв'яжеться протягом дня.</p>
       </form>
     </div>
   </div>
@@ -466,7 +512,7 @@
 </footer>
 
 <div class="sticky-m">
-  <span>Early Bird ⏳ 14:23</span>
+  <span>До підйому ціни ⏳ <b id="cdm" style="color:var(--accent)">14:23</b></span>
   <a href="#pricing" class="btn btn-accent">Записатись</a>
 </div>
 
@@ -504,7 +550,12 @@ document.getElementById('faq').innerHTML = faq.map(([q,a])=>`
 function slide(d){const s=document.getElementById('slider');s.scrollBy({left:d*350,behavior:'smooth'});}
 
 let t=14*86400+23*3600+50*60+11;
-setInterval(()=>{t--;const d=Math.floor(t/86400),h=Math.floor(t%86400/3600),m=Math.floor(t%3600/60),s=t%60;const el=document.getElementById('cd');if(el)el.textContent=`${d}:${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;},1000);
+const p2=n=>String(n).padStart(2,'0');
+setInterval(()=>{t--;const d=Math.floor(t/86400),h=Math.floor(t%86400/3600),m=Math.floor(t%3600/60),s=t%60;
+  const full=`${d}д ${p2(h)}:${p2(m)}:${p2(s)}`;
+  ['cd','cd3'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=full;});
+  const mm=document.getElementById('cdm');if(mm)mm.textContent=`${d}д ${p2(h)}год`;
+},1000);
 </script>
 </body>
 </html>
