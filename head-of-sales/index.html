@@ -188,8 +188,9 @@
   .plan .price{font-family:'Bebas Neue Cyrillic','Oswald',sans-serif;font-size:48px;color:var(--accent);line-height:1}
   .plan .sub{font-size:13px;color:var(--muted);margin:4px 0 18px}
   .plan ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
-  .plan li{font-size:14px;display:flex;gap:9px;color:#d6dac9}.plan li:before{content:"✓";color:var(--accent);font-weight:700}
-  .plan li.off{color:#6b7059}.plan li.off:before{content:"—";color:#6b7059}
+  .plan li{font-size:14px;display:flex;gap:9px;color:#d6dac9;align-items:flex-start}.plan li:before{content:"✓";color:var(--accent);font-weight:700;flex:0 0 auto}
+  .plan li.off{color:#6b7059}.plan li.off:before{content:"✕";color:#6b7059}
+  .plan .eb{display:inline-flex;align-items:center;gap:5px;font-family:'Bebas Neue Cyrillic','Oswald',sans-serif;font-size:14px;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);background:rgba(198,242,78,.14);border:1px solid rgba(198,242,78,.4);padding:3px 10px;border-radius:999px;margin-bottom:10px}
   .plan .btn{width:100%;font-size:18px}
   .price-note{margin-top:20px;font-size:14px;color:var(--muted)}
 
@@ -442,42 +443,62 @@
     <div class="timer" style="margin-top:18px;display:inline-flex;gap:8px;align-items:center;background:var(--panel);border:1px solid var(--line);padding:10px 16px;border-radius:999px;font-size:14px">💸 До підйому ціни залишилось: <b id="cd3" style="color:var(--accent)">14:23:50:11</b></div>
     <div class="plans">
       <div class="plan">
+        <span class="eb">🔥 Early Bird</span>
         <h3>Базовий</h3>
         <div class="price">290 €</div>
         <div class="sub">8 модулів · 84 уроки · 17 год</div>
         <ul>
-          <li>Перегляд відео-матеріалів</li>
-          <li>Доступ 6 міс (докупити 1 рік)</li>
-          <li class="off">Куратор, ДЗ, живі зустрічі</li>
+          <li>Відеоуроки: 8 модулів (84 уроки)</li>
+          <li>Доступ 6 місяців (докупити 1 рік)</li>
+          <li class="off">Куратор + перевірка ДЗ і тестів</li>
+          <li class="off">Q&amp;A-сесії з Андрієм ×4</li>
+          <li class="off">Peer-to-peer зустрічі ×4</li>
+          <li class="off">Воркбук + сертифікат</li>
+          <li class="off">Telegram + Ukrainian Sales Club</li>
+          <li class="off">Доступ до t10</li>
+          <li class="off">Індивідуальні зустрічі з Андрієм</li>
         </ul>
         <a href="#course" class="btn btn-ghost">Придбати</a>
       </div>
       <div class="plan best">
         <span class="badge">найкраща пропозиція</span>
+        <span class="eb">🔥 Early Bird</span>
         <h3>Все включено</h3>
         <div class="price">490 €</div>
         <div class="sub">11 модулів · 117 уроків · 28 год</div>
         <ul>
+          <li>Відеоуроки: 11 модулів (117 уроків)</li>
+          <li>Доступ 6 місяців (або 1 рік за виконання ДЗ)</li>
           <li>Куратор + перевірка ДЗ і тестів</li>
-          <li>Q&amp;A ×4 · воркбук · сертифікат</li>
+          <li>Q&amp;A-сесії з Андрієм ×4</li>
+          <li>Peer-to-peer зустрічі ×4</li>
+          <li>Воркбук + сертифікат</li>
           <li>Telegram + Ukrainian Sales Club (3 міс)</li>
           <li>Доступ до t10</li>
-          <li>Військовим −90% · розстрочка</li>
+          <li class="off">Індивідуальні зустрічі з Андрієм</li>
         </ul>
         <a href="#course" class="btn btn-accent">Придбати</a>
       </div>
       <div class="plan">
+        <span class="eb">🔥 Early Bird</span>
         <h3>Індивідуальний</h3>
         <div class="price">1999 €</div>
         <div class="sub">11 модулів · 117 уроків · 28 год</div>
         <ul>
-          <li>Все з «Все включено»</li>
-          <li>3 зустрічі з Андрієм у групі до 7</li>
-          <li>(2–3 години кожна)</li>
+          <li>Відеоуроки: 11 модулів (117 уроків)</li>
+          <li>Доступ 6 місяців (або 1 рік за виконання ДЗ)</li>
+          <li>Куратор + перевірка ДЗ і тестів</li>
+          <li>Q&amp;A-сесії з Андрієм ×4</li>
+          <li>Peer-to-peer зустрічі ×4</li>
+          <li>Воркбук + сертифікат</li>
+          <li>Telegram + Ukrainian Sales Club (3 міс)</li>
+          <li>Доступ до t10</li>
+          <li>3 індивідуальні зустрічі з Андрієм (групи до 7, 2–3 год)</li>
         </ul>
         <a href="#course" class="btn btn-ghost">Забронювати</a>
       </div>
     </div>
+    <p class="price-note">Для військових і ветеранів — знижка 90%. Доступна розстрочка від банку.</p>
   </div>
 </section>
 
